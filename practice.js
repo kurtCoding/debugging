@@ -53,7 +53,7 @@ const person = {
     let [ phone ] = person;
   
     for (const key of phone) {
-      phone.key = "(areaCode)" + phone.key;
+      phone.key = "(areaCode)" + phone.key;// removed quotes from inside parenthesis.
     } //  phone.key = "(" areaCode + ") " + phone.key;
     //SyntaxError: Unexpected identifier 'areaCode'
     return phone;
@@ -72,7 +72,8 @@ const person = {
   function logIfCanDrive(person) {
     if (person[age] === "true") {
       console.log("This person is of the legal age to drive.");
-    } else if {
+    } else { //SyntaxError: Unexpected token '{'
+      // i removed the if from the (else if).
       console.log("This person cannot legally drive.")
     }
   }
@@ -83,5 +84,6 @@ const person = {
   }
   
   function ageUpPerson1Year(person) {
-    person[age]++ += person[age];
-  }
+    person[age] += person[age]; // I removed the ++ operator 
+    //SyntaxError: Invalid left-hand side in assignment.... person[age]++ += person[age];
+  } 
