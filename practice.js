@@ -38,8 +38,8 @@ const person = {
     let major = education[major];
     let university = education[university][name];
   
-    return "My name is ${person.firstName}, and I graduated from ${university} with a $[degree] in ${major}".
-  }
+    return "My name is ${person.firstName}, and I graduated from ${university} with a $[degree] in ${major}." // Period outside quotes.
+  } //SyntaxError: Unexpected token '}', /Users/kjulien/Documents/Pursuit/lab-github/debugging/practice.js:42
   
   function logAllFriendsNamesAndAges(person) {
     let [ friends ] = person;
@@ -53,8 +53,9 @@ const person = {
     let [ phone ] = person;
   
     for (const key of phone) {
-      phone.key = "(" areaCode + ") " + phone.key;
-    }
+      phone.key = "(areaCode)" + phone.key;
+    } //  phone.key = "(" areaCode + ") " + phone.key;
+    //SyntaxError: Unexpected identifier 'areaCode'
     return phone;
   }
   
